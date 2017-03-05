@@ -1,0 +1,51 @@
+{
+  "name": "mocha-test",
+  "title": "mocha-test",
+  "description": "mocha test",
+  "version": "3.1.2-pre",
+  "main": "dist/mocha-test.js",
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/fabug/mocha-test.git"
+  },
+  "keywords": [
+
+  ],
+  "bugs": {
+
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha":"^3.1.1",
+    "assert": "^1.4.1",
+    "browserify": "^13.0.0",
+    "coffee-script": "^1.10.0",
+    "coveralls": "^2.11.15",
+    "expect.js": "^0.3.1",
+    "istanbul-combine": "^0.3.0",
+    "karma": "1.3.0",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-expect": "^1.1.2",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sauce-launcher": "coderbyheart/karma-sauce-launcher",
+    "karma-spec-reporter": "0.0.26",
+    "nyc": "^10.0.0",
+    "os-name": "^2.0.1",
+    "phantomjs": "1.9.8",
+    "rimraf": "^2.5.2",
+    "semistandard": "^9.2.1",
+    "should": "^11.1.1",
+    "through2": "^2.0.1",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "build": "npm install && mocha",
+    "start": "npm install && mocha",
+    "test": "npm install && mocha ",
+    "precommit": "grunt lint:newer",
+    "commitmsg": "node node_modules/commitplease"
+  }
+}
