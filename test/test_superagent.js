@@ -10,7 +10,7 @@ var tests = [
     ,"https://segmentfault.com/a/1190000002748032"
 ];
 
-describe('#request', function () {
+describe('#request ajax', function () {
     tests.forEach(function (url) {
         it(url, function (done) {
             request({
