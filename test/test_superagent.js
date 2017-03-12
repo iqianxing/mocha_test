@@ -1,5 +1,5 @@
 var assert = require('chai').assert;
-var request = require("request");
+var request = require("superagent");
 
 var tests = [
     "http://www.qq.com"
@@ -10,7 +10,7 @@ var tests = [
     ,"https://segmentfault.com/a/1190000002748032"
 ];
 
-describe('#request ajax', function () {
+describe('#superagent', function () {
     tests.forEach(function (url) {
         it(url, function (done) {
             request({
