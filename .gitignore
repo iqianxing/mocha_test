@@ -1,0 +1,8 @@
+node_modules
+reporter
+dist
+.vscode
+.nyc_output
+.tmp
+.idea
+.DS_Store

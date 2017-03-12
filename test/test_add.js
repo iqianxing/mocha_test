@@ -6,7 +6,7 @@ function add() {
     }, 0);
 }
 
-describe('add()', function () {
+describe('#add()', function () {
     var tests = [{
             args: [1, 2],
             expected: 3

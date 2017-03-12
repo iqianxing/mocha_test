@@ -3,36 +3,40 @@
   "title": "mocha-test",
   "description": "mocha test",
   "version": "3.1.2-pre",
-  "main": "dist/mocha-test.js",
+  "main": "index.js",
   "repository": {
-    "type": "git",
-    "url": "https://git.oschina.net/fabug/mocha-test.git"
+    "type": "git"
   },
-  "keywords": [
-
-  ],
-  "bugs": {
-
-  },
+  "keywords": [],
+  "bugs": {},
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "tough-cookie": "^2.3.2",
+    "tough-cookie-filestore": "0.0.1"
+  },
   "devDependencies": {
-    "mocha":"^3.1.1",
-    "chai":"^3.5.0",
     "assert": "^1.4.1",
+    "chai": "^3.5.0",
     "coveralls": "^2.11.15",
+    "cross-env": "^1.0.7",
+    "eslint": "^3.17.1",
     "expect.js": "^0.3.1",
+    "mocha": "^3.1.1",
+    "najax": "^1.0.1",
     "nyc": "^10.0.0",
     "rimraf": "^2.5.2",
     "should": "^11.1.1",
+    "superagent": "^3.5.0",
+    "superagent-no-cache": "~0.1.1",
+    "superagent-prefix": "~0.0.2",
     "through2": "^2.0.1",
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "build": "npm install && mocha",
+    "build": "npm run lint && mocha",
     "start": "npm install && mocha",
-    "test": "npm install && mocha ",
-    "precommit": "grunt lint:newer",
-    "commitmsg": "node node_modules/commitplease"
+    "test-doc": "rimraf reporter/ && cp -r docs/ reporter/ && npm run test-mocha",
+    "test-mocha": "mocha --reporter doc | cat docs/head.html - docs/tail.html > reporter/report.html",
+    "lint": "eslint lib/ *.js tests/ && echo Lint passed."
   }
 }
