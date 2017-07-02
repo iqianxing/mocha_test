@@ -1,0 +1,15 @@
+function watchFile() {
+	var logFile = "./doc/log/mocha.log";
+	var currentSize = fs.statSync(logFile).size;
+
+	fs.watch(logFile, function (event, filename) {
+		if (event == "change") {
+			fs.stat(logFile, function (err, stat) {
+				console.log(currentSize, stat.size);
+
+				readNewLogs(logFile, currentSize, stat.size);
+				currentSize = stat.size;
+			})
+		}
+	});
+}
